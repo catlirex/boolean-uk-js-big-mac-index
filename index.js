@@ -20,11 +20,23 @@ For example, using figures in July 2008:
 */
 let usPrice = 5.66
 
-function bidMacIndex (price, exchangeRate){
+function bigMacIndex (country, price, exchangeRate){
+    
     impliedPurchasingPower = usPrice/ price
-    let index = (exchangeRate - impliedPurchasingPower)/impliedPurchasingPower
+    let index = ((exchangeRate - impliedPurchasingPower)/impliedPurchasingPower *100 ).toFixed(2)
 
-    return index;
+   console.log("Big Mac index of "+ country + ":" + index + "%")
 }
+
+bigMacIndex("Hong Kong", 0.13, 7.76);
+bigMacIndex("Japan", 0.0092, 490);
+bigMacIndex("UK", 1.39, 3.79);
+bigMacIndex("Spain", 1.21, 4.75);
+bigMacIndex("Australia", 0.78, 7.35);
+
+
+
+
+
 
 
