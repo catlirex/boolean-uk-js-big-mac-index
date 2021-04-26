@@ -18,21 +18,44 @@ For example, using figures in July 2008:
   - (2.00 – 1.56) / 1.56 = 28%
   - the pound was thus overvalued against the dollar by 28%
 */
+
 let usPrice = 5.66
 
 function bigMacIndex (country, price, exchangeRate){
     
     impliedPurchasingPower = usPrice/ price
     let index = ((exchangeRate - impliedPurchasingPower)/impliedPurchasingPower *100 ).toFixed(2)
-
+    
    console.log("Big Mac index of "+ country + ":" + index + "%")
+   return parseFloat(index);
 }
 
-bigMacIndex("Hong Kong", 0.13, 7.76);
-bigMacIndex("Japan", 0.0092, 490);
-bigMacIndex("UK", 1.39, 3.79);
-bigMacIndex("Spain", 1.21, 4.75);
-bigMacIndex("Australia", 0.78, 7.35);
+let ukIndex =bigMacIndex("UK", 1.39, 3.79);
+let hongkongIndex = bigMacIndex("Hong Kong", 0.13, 7.76);
+let japanIndex = bigMacIndex("Japan", 0.0092, 490);
+let spainIndex = bigMacIndex("Spain", 1.21, 4.75);
+let auIndex = bigMacIndex("Australia", 0.78, 7.35);
+
+function ukcompare(country, i){
+    if (ukIndex > i){
+        console.log("UK BigMac index is greater than " + country)
+    }
+    else {
+        console.log("UK BigMac index is smaller than " + country)
+    }
+}
+
+ukcompare("Hong Kong", hongkongIndex)
+ukcompare("Japan", japanIndex)
+ukcompare("Spain", spainIndex)
+ukcompare("Australia", auIndex)
+
+
+
+
+
+
+
 
 
 
