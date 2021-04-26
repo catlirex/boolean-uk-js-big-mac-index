@@ -36,7 +36,7 @@ let japanIndex = bigMacIndex("Japan", 0.0092, 490);
 let spainIndex = bigMacIndex("Spain", 1.21, 4.75);
 let auIndex = bigMacIndex("Australia", 0.78, 7.35);
 
-function ukcompare(country, i){
+function ukCompare(country, i){
     if (ukIndex > i){
         console.log("UK BigMac index is greater than " + country)
     }
@@ -45,10 +45,10 @@ function ukcompare(country, i){
     }
 }
 
-ukcompare("Hong Kong", hongkongIndex)
-ukcompare("Japan", japanIndex)
-ukcompare("Spain", spainIndex)
-ukcompare("Australia", auIndex)
+ukCompare("Hong Kong", hongkongIndex)
+ukCompare("Japan", japanIndex)
+ukCompare("Spain", spainIndex)
+ukCompare("Australia", auIndex)
 
 
 
